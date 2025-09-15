@@ -314,35 +314,51 @@
             </div>
         </section>
         
-        <!-- Section 10.5: Pre-register Form -->
-        <section id="pre-register" class="relative overflow-hidden pt-20 md:pt-32 pb-40 section-glow">
-            <div class="container mx-auto px-6 max-w-3xl relative z-10">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold font-serif-kr">사전 등록하기</h2>
-                    <p class="mt-4 text-lg text-gray-300">Memocean의 여정에 가장 먼저 동참하고, 런칭 소식을 받아보세요.</p>
-                </div>
-                <div class="glass-card rounded-2xl p-8 md:p-12">
-                    <form>
-                        <div class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div><label for="name" class="block text-sm font-semibold mb-2 text-gray-300">이름</label><input type="text" id="name" name="name" required class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div>
-                                <div><label for="email" class="block text-sm font-semibold mb-2 text-gray-300">이메일</label><input type="email" id="email" name="email" required class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div>
+    <!-- Section 10.5: Pre-register Form -->
+    <section id="pre-register" class="relative overflow-hidden pt-20 md:pt-32 pb-40 section-glow">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif-kr">사전 등록하기</h2>
+                <p class="mt-4 text-lg text-gray-300">Memocean의 여정에 가장 먼저 동참하고, 런칭 소식을 받아보세요.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-8 md:p-12">
+                <!-- Netlify Form -->
+                <form name="preregister" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+                    <input type="hidden" name="form-name" value="preregister" />
+                    <!-- Honeypot field for spam prevention -->
+                    <p class="hidden">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold mb-2 text-gray-300">이름</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
                             </div>
                             <div>
-                                <label for="role" class="block text-sm font-semibold mb-2 text-gray-300">참여 유형</label>
-                                <select id="role" name="role" class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
-                                    <option>유형을 선택하세요</option>
-                                    <option value="provider">경험을 기록하고 싶습니다 (Provider)</option>
-                                    <option value="user">이정표를 찾고 싶습니다 (User)</option>
-                                    <option value="both">둘 다 해당됩니다</option>
-                                </select>
+                                <label for="email" class="block text-sm font-semibold mb-2 text-gray-300">이메일</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
                             </div>
-                            <div><button type="submit" class="w-full bg-blue-600 text-white font-bold px-8 py-4 rounded-lg cta-button text-lg hover:bg-blue-500">사전 등록 제출하기</button></div>
                         </div>
-                    </form>
-                </div>
+                        <div>
+                            <label for="role" class="block text-sm font-semibold mb-2 text-gray-300">참여 유형</label>
+                            <select id="role" name="role" class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                                <option>유형을 선택하세요</option>
+                                <option value="provider">경험을 기록하고 싶습니다 (Provider)</option>
+                                <option value="user">이정표를 찾고 싶습니다 (User)</option>
+                                <option value="both">둘 다 해당됩니다</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold px-8 py-4 rounded-lg cta-button text-lg hover:bg-blue-500">
+                                사전 등록 제출하기
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Section 11: Final CTA -->
         <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
@@ -496,5 +512,6 @@
     </script>
 </body>
 </html>
+
 
 
